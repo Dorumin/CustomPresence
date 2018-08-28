@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "readline-promise": "^1.0.3"
+  }
+}

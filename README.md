@@ -1,0 +1,1 @@
+Clone, install, and enjoy. Edit the source code to skip the token scrutiny, couldn't bother to implement config.json
