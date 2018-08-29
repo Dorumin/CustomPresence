@@ -24,7 +24,7 @@ client.on('ready', async () => {
 			});
 			continue;
 		}
-		let type = STATUSES.findIndex(status => presence.startsWith(status));
+		let type = STATUSES.findIndex(status => presence.toLowerCase().startsWith(status.toLowerCase()));
 		let defaulted;
 		if (type == -1) {
 			console.log('No prefix found; defaulting to ' + STATUSES[DEFAULT_STATUS].toUpperCase());
