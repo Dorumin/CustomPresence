@@ -14,8 +14,16 @@ const DEFAULT_STATUS = 0;
 
 client.on('ready', async () => {
 	console.log('Available prefixes: ' + STATUSES.join(', '));
+	console.log('Send an empty message to clear the status\n');
 	while (true) {
-		let presence = await rl.questionAsync('Enter your new status and press enter\n');
+		let presence = await rl.questionAsync('Input your new status and press enter\n');
+		if (!presence.trim()) {
+			console.log('Clearing status');
+			client.user.setPresence({
+				game: null
+			});
+			continue;
+		}
 		let type = STATUSES.findIndex(status => presence.startsWith(status));
 		let defaulted;
 		if (type == -1) {
